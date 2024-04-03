@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:messager/presentation/pages/chat_list_page.dart';
+import 'package:messager/presentation/page/chat_list_page.dart';
 import 'package:messager/presentation/router.dart';
 
 class App extends StatelessWidget {
@@ -7,8 +7,11 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       initialRoute: ChatListPage.path,
+      onGenerateInitialRoutes: (initialRoute) => [
+        ChatListPage.route(),
+      ],
       onGenerateRoute: onGenerateRoute,
     );
   }

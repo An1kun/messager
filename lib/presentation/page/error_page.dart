@@ -5,10 +5,10 @@ class ErrorPage extends StatelessWidget {
 
   static const path = 'error-page';
 
-  static final route = MaterialPageRoute(
-    settings: const RouteSettings(name: ErrorPage.path),
-    builder: (_) => const ErrorPage(),
-  );
+  static route() => MaterialPageRoute(
+        settings: const RouteSettings(name: ErrorPage.path),
+        builder: (_) => const ErrorPage(),
+      );
 
   @override
   Widget build(BuildContext context) {
