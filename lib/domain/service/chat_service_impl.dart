@@ -22,7 +22,6 @@ class ChatServiceImpl implements ChatService {
       id: DateTime.now().millisecondsSinceEpoch.toString(),
       name: name,
       participants: participants,
-      lastMessage: null,
     );
 
     _chatsController.sink.add(chat);

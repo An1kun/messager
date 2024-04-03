@@ -3,6 +3,12 @@ import 'package:messager/domain/model/user.dart';
 import 'package:messager/domain/service/message_service.dart';
 
 class MessageServiceImpl implements MessageService {
+  MessageServiceImpl._();
+
+  static final MessageServiceImpl _singleton = MessageServiceImpl._();
+
+  factory MessageServiceImpl() => _singleton;
+
   Map<String, List<Message>> _messages = {};
 
   @override
@@ -26,7 +32,9 @@ class MessageServiceImpl implements MessageService {
   }
 
   @override
-  Future<List<Message>> readMessages({required String chatId}) async {
+  Future<List<Message>> readMessages({
+    required String chatId,
+  }) async {
     return _messages[chatId] ?? [];
   }
 }
